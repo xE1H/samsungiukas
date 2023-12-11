@@ -25,6 +25,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 
+  <script src="/js/app.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
           integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
@@ -47,23 +49,23 @@
   <!--  Video  -->
 </div>
 <div id="photovideoslider">
-  <section id="slider" class="splide">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">Slide 01</li>
-        <li class="splide__slide">Slide 02</li>
-        <!--        tiesiog image tags tinka cia -->
-        <li class="splide__slide">Slide 03</li>
-
-        <li class="splide__slide">Slide 04</li>
-        <li class="splide__slide">Slide 05</li>
-        <li class="splide__slide">Slide 06</li>
-      </ul>
+  <div class="img-comp-container">
+    <div class="img-comp-img">
+      <img src="/img/after.png" width="614" height="816">
     </div>
-  </section>
+    <div class="img-comp-img img-comp-overlay">
+      <img src="/img/before.jpg" width="614" height="816">
+    </div>
+  </div>
+  <div id="text">
+    <h2>KAZKOKS TITLE</h2>
+    <p>
+      kazkoks labai geras bet ne per ilgas tekstas ar aprasymas
+    </p>
+  </div>
 </div>
 <div id="tinklalaides">
-
+  <iframe style="border-radius: 12px" width="100%" height="152" title="Spotify Embed: Tie Garsai" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/show/2LhwkfqSPRlHGqCrjllsj9?si=4f25b36976464de0&utm_source=oembed"></iframe>
 </div>
 <div id="rezervacijos">
   <iframe src="https://test-r.xe1h.xyz" frameborder="0"></iframe>
@@ -72,23 +74,7 @@
 
 </div>
 <script>
-  setTimeout(function () {
-    var splide = new Splide('#slider', {
-      perPage: 3,
-      focus: 0,
-      type: 'loop'
-    });
-
-    splide.mount();
-
-    function go() {
-      splide.go(">");
-      setTimeout(go, 1500);
-    }
-
-    setTimeout(go, 1500);
-  }, 500);
-
+  initComparisons();
 </script>
 </body>
 </html>
