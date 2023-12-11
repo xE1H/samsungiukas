@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+          integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+        integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
+
+</head>
+
+<body>
+<div id="landing">
+  <div id="landingbg"></div>
+  <h1>RECORDING STUDIO</h1>
+  <h3>TEAM CONCTETE JUNGLERS</h3>
+  <h5>Vilnius Lyceum</h5>
+  <!--Lico foto as background-->
+</div>
+<div id="videoDiv">
+  <video autoplay muted loop id="video">
+    <source src="img/kitas.mp4" type="video/mp4">
+  </video>
+  <!--  Video  -->
+</div>
+<div id="photovideoslider">
+  <section id="slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">Slide 01</li>
+        <li class="splide__slide">Slide 02</li>
+        <!--        tiesiog image tags tinka cia -->
+        <li class="splide__slide">Slide 03</li>
+
+        <li class="splide__slide">Slide 04</li>
+        <li class="splide__slide">Slide 05</li>
+        <li class="splide__slide">Slide 06</li>
+      </ul>
+    </div>
+  </section>
+</div>
+<div id="tinklalaides">
+
+</div>
+<div id="rezervacijos">
+  <iframe src="https://test-r.xe1h.xyz" frameborder="0"></iframe>
+</div>
+<div id="islaidosparama">
+
+</div>
+<script>
+  setTimeout(function () {
+    var splide = new Splide('#slider', {
+      perPage: 3,
+      focus: 0,
+      type: 'loop'
+    });
+
+    splide.mount();
+
+    function go() {
+      splide.go(">");
+      setTimeout(go, 1500);
+    }
+
+    setTimeout(go, 1500);
+  }, 500);
+
+</script>
+</body>
+</html>
