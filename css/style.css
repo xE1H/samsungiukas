@@ -254,15 +254,12 @@ body {
   scrollbar-width: none;
 
   overflow-x: hidden;
-  scroll-snap-type: y proximity;
   /* Enable smooth scrolling */
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
 
 body > div {
-  /* Make each div a snap point */
-  scroll-snap-align: start;
   /* Full height */
   height: 100vh;
   border-bottom: #333 solid 2px;
