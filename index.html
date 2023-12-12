@@ -57,24 +57,76 @@
       <img src="/img/before.jpg" width="614" height="816">
     </div>
   </div>
-  <div id="text">
-    <h2>KAZKOKS TITLE</h2>
+  <div class="text">
+    <h2>FACILITATING PERSONAL GROWTH</h2>
     <p>
-      kazkoks labai geras bet ne per ilgas tekstas ar aprasymas
+      We are dedicated to empowering students at Vilnius Lyceum, providing them with the freedom and resources to openly
+      express their creativity and individuality in the realms of both music and videography.
     </p>
   </div>
 </div>
 <div id="tinklalaides">
-  <iframe style="border-radius: 12px" width="100%" height="152" title="Spotify Embed: Tie Garsai" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://open.spotify.com/embed/show/2LhwkfqSPRlHGqCrjllsj9?si=4f25b36976464de0&utm_source=oembed"></iframe>
+  <iframe style="border-radius: 12px" width="100%" height="152" title="Spotify Embed: Tie Garsai" frameborder="0"
+          allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          src="https://open.spotify.com/embed/show/2LhwkfqSPRlHGqCrjllsj9?si=4f25b36976464de0&utm_source=oembed"></iframe>
+  <div class="text">
+    <h2>CONTINUING WHAT WAS STARTED</h2>
+    <p>
+      Although Vilnius Lyceum initiated a podcast, its potential was curtailed after just two episodes due to inadequate
+      space. Remarkably, those initial episodes garnered over 500 streams, underscoring the untapped enthusiasm within
+      our community. Our aspiration is to build on such engaging initiatives, reaching out to the entire community and
+      fostering an enduring platform for creative expression.
+    </p>
+  </div>
 </div>
 <div id="rezervacijos">
-  <iframe src="https://test-r.xe1h.xyz" frameborder="0"></iframe>
+  <div class="text">
+    <h2>CONTINUING WHAT WAS STARTED</h2>
+    <p>
+      Although Vilnius Lyceum initiated a podcast, its potential was curtailed after just two episodes due to inadequate
+      space. Remarkably, those initial episodes garnered over 500 streams, underscoring the untapped enthusiasm within
+      our community. Our aspiration is to build on such engaging initiatives, reaching out to the entire community and
+      fostering an enduring platform for creative expression.
+    </p>
+  </div>
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="/img/1.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/2.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/3.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/4.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/5.jpg" alt="">
+        </li>
+    </div>
+  </div>
 </div>
 <div id="islaidosparama">
 
 </div>
 <script>
   initComparisons();
+  var splide = new Splide(".splide", {
+    type: 'loop',
+  });
+  splide.mount();
+
+  function automove() {
+    splide.go('>');
+    setTimeout(automove, 3000);
+  }
+
+  automove();
 </script>
 </body>
 </html>

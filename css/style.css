@@ -348,23 +348,38 @@ html {
   justify-content: center;
 }
 
-#photovideoslider div h2, p {
+.text h2, p {
   color: #aaa;
 }
 
-#photovideoslider #text {
-  text-align: center;
+.text h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  color: #ddd;
+}
+
+.text p {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  letter-spacing: 0.05em;
+}
+
+#photovideoslider .text {
+  text-align: LEFT;
   position: absolute;
   top: 50%;
   left: 25%;
   transform: translate(-50%, -50%);
+  width: 40%;
 }
 
 #photovideoslider .img-comp-container {
   text-align: center;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 59%;
   transform: translate(-50%, -50%);
 }
 
@@ -389,12 +404,56 @@ html {
   padding: 0;
 }
 
+#tinklalaides iframe {
+  width: 40%;
+  height: 50vh;
+  object-fit: cover;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, 0%);
+}
+
+#tinklalaides .text {
+  text-align: LEFT;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+
+
+
+body div {
+  /* inset border */
+  box-shadow: inset 0px 0px 3px 3px rgba(255,255,255,1);
+}
+
 #rezervacijos {
   width: 100%;
   height: 100vh;
   position: relative;
   margin: 0;
   padding: 0;
+}
+
+#rezervacijos .text {
+  text-align: LEFT;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
+
+#rezervacijos .splide {
+text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 40%;
 }
 
 #islaidosparama {
@@ -408,6 +467,8 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+
+
 
 
 /*slider*/
@@ -435,7 +496,8 @@ body::-webkit-scrollbar {
   /*set the appearance of the slider:*/
   width: 40px;
   height: 40px;
-  background-color: #aaa;
+  background-color: #000000;
   opacity: 0.85;
   border-radius: 50%;
+  border: 2px solid #fff;
 }
