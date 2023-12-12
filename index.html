@@ -105,26 +105,10 @@
       reading room.
     </p>
   </div>
-  <div class="splide">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <img src="/img/1.jpg" alt="">
-        </li>
-        <li class="splide__slide">
-          <img src="/img/2.jpg" alt="">
-        </li>
-        <li class="splide__slide">
-          <img src="/img/3.jpg" alt="">
-        </li>
-        <li class="splide__slide">
-          <img src="/img/4.jpg" alt="">
-        </li>
-        <li class="splide__slide">
-          <img src="/img/5.jpg" alt="">
-        </li>
-      </ul>
-    </div>
+  <div class="demo">
+    <a href="https://s4t.xe1h.xyz">
+    <iframe src="https://s4t.xe1h.xyz/" width="500px" height="800px"></iframe>
+    </a>
   </div>
 </div>
 <div id="islaidos">
@@ -133,13 +117,13 @@
 </div>
 <div id="parama" style="display: flex; align-items: center; background-image: url('/img/paramaADDon.png');">
   <div class="left-content"
-       style="position: relative; width: 30%; height: 50vh; object-fit: cover; top: 5%; left: 25%; transform: translate(-50%, 0%); overflow: hidden; float: left;">
+       style="">
     <iframe style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; height: 100%;"
             src="https://4fund.com/wewgxp/widget/13" frameborder="0" scrolling="no"></iframe>
 
   </div>
   <div class="right-content"
-       style="display: grid; grid-template-columns: 1fr; grid-gap: 10px; text-align: left; position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%); width: 40%; padding: 5%;">
+       style="">
     <div class="text">
       <h2>SUPPORT THIS PROJECT</h2>
     </div>
@@ -148,17 +132,7 @@
 </div>
   <script>
     initComparisons();
-    var splide = new Splide(".splide", {
-      type: 'loop',
-    });
-    splide.mount();
 
-    function automove() {
-      splide.go('>');
-      setTimeout(automove, 3000);
-    }
-
-  automove();
   //smoothScroll();
   initAnimations();
   //init3dModel();
