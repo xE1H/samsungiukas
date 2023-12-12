@@ -1,3 +1,5 @@
+var slidex;
+
 function initComparisons() {
   var x, i;
   /* Find all elements with an "overlay" class: */
@@ -78,76 +80,60 @@ function initComparisons() {
       /* Position the slider: */
       slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
     }
+
+    slide(w);
+    slidex = slide;
   }
 }
 
 
-function smoothScroll() {
-  const divs = Array.from(document.querySelectorAll('body > div'));
-  let isScrolling = false;
+const lenis = new Lenis();
 
-  let lastScrollTop = 0;
+lenis.on('scroll', (e) => {
+  //console.log(e);
+})
 
-  function getClosestDiv(deltaY) {
-    let closest = null;
-    let minDistance = Number.MAX_VALUE;
-    let scrollDirection = null;
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
 
-    // Determine the scroll direction
-    if (deltaY < 0) {
-      scrollDirection = 'down';
-    } else {
-      scrollDirection = 'up';
+requestAnimationFrame(raf);
+
+function initAnimations() {
+  var slider = document.getElementsByClassName("img-comp-slider")[0];
+
+// animated drag image thing on scroll
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#videoDiv',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#videoDiv"
     }
+  }).to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
+  });
 
-    divs.forEach((div) => {
-      const rect = div.getBoundingClientRect();
-      const distance = Math.abs(rect.top - window.innerHeight / 2);
-
-      if (distance < minDistance) {
-        // If scrolling down, select the div below the current one
-        // If scrolling up, select the div above the current one
-        if ((scrollDirection === 'down' && rect.top > 0) || (scrollDirection === 'up' && rect.bottom < window.innerHeight)) {
-          minDistance = distance;
-          closest = div;
-        }
-      }
-    });
-
-    return closest;
-  }
-
-  function scrollToElement(element) {
-    //isScrolling = true;
-    element.scrollIntoView({behavior: 'smooth'});
-  }
-
-  function handleScroll(e) {
-    e.preventDefault(); // Prevent default scrolling
-
-    if (isScrolling) return;
-
-    let deltaY;
-    let scrollDirection;
-
-    if (e.type === 'wheel') {
-      deltaY = e.deltaY;
-    } else if (e.type === 'touchmove') {
-      deltaY = e.touches[0].clientY;
-      deltaY = deltaY < window.innerHeight / 2 ? 1 : -1;
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#photovideoslider',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#photovideoslider"
     }
-
-    const closestDiv = getClosestDiv(deltaY);
-
-    if (closestDiv) {
-      scrollToElement(closestDiv);
-    }
-  }
-
-  window.addEventListener('wheel', handleScroll, {passive: false}); // Declare the listener as non-passive
-  window.addEventListener('touchmove', handleScroll, {passive: false}); // Declare the listener as non-passive for touch devices
-
-  window.addEventListener('scrollend', () => {
-    isScrolling = false;
+  }).to('.img-comp-slider', {
+    'left': 'calc(0% - 20px)',
+    'duration': 50
+  }).to('#before', {
+      'width': 0,
+      'duration': 50
+    }, '<'
+  ).to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
   });
 }
