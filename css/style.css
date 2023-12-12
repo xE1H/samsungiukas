@@ -259,15 +259,64 @@ body {
   scroll-behavior: smooth;
 }
 
+#renderCanvas {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  background: transparent; /* Ensures canvas has a transparent background */
+
+  /* 50% darker */
+  -webkit-filter: brightness(80%);
+  filter: brightness(80%);
+}
+
 body > div {
   /* Full height */
   height: 100vh;
   border-bottom: #333 solid 2px;
+  /*Gradient black center outside #191a1c*/
+
 }
 
 html {
   scrollbar-width: none;
   scroll-behavior: smooth;
+}
+#landing {
+  background: linear-gradient(
+    180deg,
+    rgba(25, 26, 28, 0.6) 0%,
+    #000000 30%,
+    #000000 70%,
+    rgba(25, 26, 28, 0.6) 100%
+  );
+}
+
+.squiggle {
+  position: absolute;
+  top: 65%;
+  left: 0%;
+  rotate: -50deg;
+  height: 104px;
+  z-index: 3;
+  overflow: hidden;
+
+}
+
+.squiggle3 {
+  position: absolute;
+  top: 0%;
+  left: -2%;
+  rotate: 170deg;
+  z-index: -3;
+}
+
+.blob1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  rotate: -120deg;
+  z-index: -1;
 }
 
 #landingbg {
@@ -295,6 +344,14 @@ html {
   filter: brightness(200%);
   width: 100%;
   letter-spacing: 0.05em;
+}
+
+#modelis {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 #landing h3 {
@@ -357,6 +414,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .text h2, p {
@@ -416,6 +474,12 @@ html {
   position: relative;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+
+#islaidos {
+  width: 100%;
+  height: 100vh;
 }
 
 #tinklalaides iframe {
@@ -537,6 +601,9 @@ body::-webkit-scrollbar {
 .img-comp-img img {
   display: block;
   vertical-align: middle;
+  horiz-align: center;
+  height: 100%;
+  overflow: hidden;
 }
 
 .img-comp-slider {
@@ -568,7 +635,7 @@ body::-webkit-scrollbar {
   }
 
   #photovideoslider {
-    height: 160vh;
+    height: 220vh;
   }
   #photovideoslider .text {
     width: 80%;
@@ -596,15 +663,15 @@ body::-webkit-scrollbar {
   }
 
   #tinklalaides {
-    height: 155vh;
+    height: 170vh;
   }
 
   #tinklalaides iframe {
     width: 80%;
-    height: 50vh;
+    height: 40vh;
     object-fit: cover;
     position: absolute;
-    top: calc(33% / 3);
+    top: 7.5%;
     left: 50%;
     transform: translate(-50%, 0%);
   }
@@ -612,7 +679,7 @@ body::-webkit-scrollbar {
   #tinklalaides .text {
     width: 80%;
     left: 50%;
-    top: 70%;
+    top: 60%;
     transform: translate(-50%, -50%);
   }
 

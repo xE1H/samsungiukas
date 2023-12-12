@@ -35,115 +35,117 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 
 
   <script src="/js/app.js"></script>
 </head>
 
 <body>
-  <div id="landing">
-    <div id="landingbg"></div>
-    <h1>RECORDING STUDIO</h1>
-    <h3>TEAM CONCTETE JUNGLERS</h3>
-    <h5>Vilnius Lyceum</h5>
-    <!--Lico foto as background-->
-  </div>
-  <div id="random" style="display:none;"></div>
-  <div id="videoDiv">
-    <video autoplay muted loop id="video">
-      <source src="img/kitas.mp4" type="video/mp4">
-    </video>
-    <!--  Video  -->
-  </div>
-  <div id="photovideoslider">
-    <div class="slider">
-      <div class="img-comp-container">
-        <div class="img-comp-img" id="after">
-          <img src="/img/after.png" width="614" height="816">
-        </div>
-        <div class="img-comp-img img-comp-overlay" id="before">
-          <img src="/img/before.jpg" width="614" height="816">
-        </div>
+<div id="landing">
+  <div id="landingbg"></div>
+  <h1>RECORDING STUDIO</h1>
+  <h3>TEAM CONCTETE JUNGLERS</h3>
+  <h5>Vilnius Lyceum</h5>
+  <!--Lico foto as background-->
+</div>
+<div id="random" style="display:none;"></div>
+<div id="videoDiv">
+  <video autoplay muted loop id="video">
+    <source src="img/kitas.mp4" type="video/mp4">
+  </video>
+  <!--  Video  -->
+</div>
+<div id="photovideoslider">
+  <div class="slider">
+    <div class="img-comp-container">
+      <div class="img-comp-img" id="after">
+        <img src="/img/after.png" width="614" height="816">
       </div>
-    </div>
-    <div class="text">
-      <h2>FACILITATING PERSONAL GROWTH</h2>
-      <p>
-        We are dedicated to empowering students at Vilnius Lyceum, providing them with the freedom and resources to
-        openly
-        express their creativity and individuality in the realms of both music and videography.
-      </p>
-    </div>
-  </div>
-  <div id="tinklalaides">
-    <iframe style="border-radius: 12px" width="100%" height="152" title="Spotify Embed: Tie Garsai" frameborder="0"
-      allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
-      src="https://open.spotify.com/embed/show/2LhwkfqSPRlHGqCrjllsj9?si=4f25b36976464de0&utm_source=oembed"></iframe>
-    <div class="text">
-      <h2>CONTINUING WHAT WAS STARTED</h2>
-      <p>
-        Although Vilnius Lyceum initiated a podcast, its potential was curtailed after just two episodes due to
-        inadequate
-        space. Remarkably, those initial episodes garnered over 500 streams, underscoring the untapped enthusiasm within
-        our community. Our aspiration is to build on such engaging initiatives, reaching out to the entire community and
-        fostering an enduring platform for creative expression.
-      </p>
-    </div>
-  </div>
-  <div id="rezervacijos">
-    <div class="text">
-      <h2>STREAMLINING STUDIO ACCESS</h2>
-      <p>
-        With its multifunctional capabilities, we anticipate the studio will attract numerous students during free
-        periods
-        and after school. To streamline access, we've created an electronic booking page, displaying studio availability
-        and enabling easy reservations. This scalable system could extend to other school spaces like the main hall and
-        reading room.
-      </p>
-    </div>
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="/img/1.jpg" alt="">
-          </li>
-          <li class="splide__slide">
-            <img src="/img/2.jpg" alt="">
-          </li>
-          <li class="splide__slide">
-            <img src="/img/3.jpg" alt="">
-          </li>
-          <li class="splide__slide">
-            <img src="/img/4.jpg" alt="">
-          </li>
-          <li class="splide__slide">
-            <img src="/img/5.jpg" alt="">
-          </li>
-        </ul>
+      <div class="img-comp-img img-comp-overlay" id="before">
+        <img src="/img/before.jpg" width="614" height="816">
       </div>
+      <img src="img/squiggle.png" class="squiggle"/>
+      <img src="img/blob1.png" class="blob1"/>
     </div>
   </div>
-  <div id="islaidos">
-    <div class="left-content"></div>
-    <div class="right-content"></div>
+  <div class="text">
+    <h2>FACILITATING PERSONAL GROWTH</h2>
+    <p>
+      We are dedicated to empowering students at Vilnius Lyceum, providing them with the freedom and resources to openly
+      express their creativity and individuality in the realms of both music and videography.
+    </p>
   </div>
-  <div id="parama" style="display: flex; align-items: center; background-image: url('/img/paramaADDon.png');">
-    <div class="left-content"
-      style="position: relative; width: 30%; height: 50vh; object-fit: cover; top: 5%; left: 25%; transform: translate(-50%, 0%); overflow: hidden; float: left;">
-      <iframe style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; height: 100%;"
-        src="https://4fund.com/wewgxp/widget/13" frameborder="0" scrolling="no"></iframe>
-      
-    </div>
-    <div class="right-content"
-      style="display: grid; grid-template-columns: 1fr; grid-gap: 10px; text-align: left; position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%); width: 40%; padding: 5%;">
-      <div class="text">
-        <h2>SUPPORT THIS PROJECT</h2>
-      </div>
-      <img src="/img/qr.png" alt="Image" style="width: 50%; border-radius: 2%;">
+</div>
+<div id="tinklalaides">
+  <iframe style="border-radius: 12px" width="100%" height="152" title="Spotify Embed: Tie Garsai" frameborder="0"
+          allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          src="https://open.spotify.com/embed/show/2LhwkfqSPRlHGqCrjllsj9?si=4f25b36976464de0&utm_source=oembed"></iframe>
+  <img src="img/3squiggle.png" class="squiggle3"/>
+  <div class="text">
+    <h2>CONTINUING WHAT WAS STARTED</h2>
+    <p>
+      Although Vilnius Lyceum initiated a podcast, its potential was curtailed after just two episodes due to inadequate
+      space. Remarkably, those initial episodes garnered over 500 streams, underscoring the untapped enthusiasm within
+      our community. Our aspiration is to build on such engaging initiatives, reaching out to the entire community and
+      fostering an enduring platform for creative expression.
+    </p>
+  </div>
+</div>
+<div id="rezervacijos">
+  <div class="text">
+    <h2>STREAMLINING STUDIO ACCESS</h2>
+    <p>
+      With its multifunctional capabilities, we anticipate the studio will attract numerous students during free periods
+      and after school. To streamline access, we've created an electronic booking page, displaying studio availability
+      and enabling easy reservations. This scalable system could extend to other school spaces like the main hall and
+      reading room.
+    </p>
+  </div>
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="/img/1.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/2.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/3.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/4.jpg" alt="">
+        </li>
+        <li class="splide__slide">
+          <img src="/img/5.jpg" alt="">
+        </li>
+      </ul>
     </div>
   </div>
+</div>
+<div id="islaidos">
+  <div class="left-content"></div>
+  <div class="right-content"></div>
+</div>
+<div id="parama" style="display: flex; align-items: center; background-image: url('/img/paramaADDon.png');">
+  <div class="left-content"
+       style="position: relative; width: 30%; height: 50vh; object-fit: cover; top: 5%; left: 25%; transform: translate(-50%, 0%); overflow: hidden; float: left;">
+    <iframe style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; height: 100%;"
+            src="https://4fund.com/wewgxp/widget/13" frameborder="0" scrolling="no"></iframe>
+
+  </div>
+  <div class="right-content"
+       style="display: grid; grid-template-columns: 1fr; grid-gap: 10px; text-align: left; position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%); width: 40%; padding: 5%;">
+    <div class="text">
+      <h2>SUPPORT THIS PROJECT</h2>
+    </div>
+    <img src="/img/qr.png" alt="Image" style="width: 50%; border-radius: 2%;">
+  </div>
+</div>
   <script>
     initComparisons();
     var splide = new Splide(".splide", {
@@ -156,10 +158,11 @@
       setTimeout(automove, 3000);
     }
 
-    automove();
-    //smoothScroll();
-    initAnimations();
-  </script>
+  automove();
+  //smoothScroll();
+  initAnimations();
+  //init3dModel();
+</script>
 </body>
 
 </html>

@@ -102,7 +102,11 @@ function initComparisons() {
 
 function initAnimations() {
   var slider = document.getElementsByClassName("img-comp-slider")[0];
-
+  // If is on phone
+  var isOnPhone = window.matchMedia("(max-width: 768px)").matches;
+  if (isOnPhone) {
+    return;
+  }
 // animated drag image thing on scroll
   gsap.registerPlugin(ScrollTrigger);
 
@@ -133,9 +137,7 @@ function initAnimations() {
       'width': 0,
       'duration': 50
     }, '<'
-  ).to({}, {'duration': 1}).set("body", {
-    'overflow-y': 'hidden !important'
-  });
+  ).to({}, {'duration': 1});
 
   gsap.timeline({
     scrollTrigger: {
@@ -145,60 +147,59 @@ function initAnimations() {
       scrub: 1,
       pin: "#tinklalaides"
     }
-  }).to({}, {'duration': 1}).set("body", {
+  })
+    .to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#rezervacijos',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#rezervacijos"
+    }
+  })
+    .to({}, {'duration': 1}).set("body", {
     'overflow-y': 'hidden !important'
   });
 }
 
-let scene, camera, renderer, model;
-
 function init3dModel() {
-  // Create the scene and set the scene size.
-  scene = new THREE.Scene();
-  const WIDTH = window.innerWidth,
-    HEIGHT = window.innerHeight;
+  var canvas = document.getElementById("renderCanvas");
 
-  // Create a renderer and add it to the DOM.
-  renderer = new THREE.WebGLRenderer({antialias:true});
-  renderer.setSize(WIDTH, HEIGHT);
-  document.body.appendChild(renderer.domElement);
+  var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
 
-  // Create a camera, zoom it out from the model a bit, and add it to the scene.
-  camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
-  camera.position.set(0,2,10);
-  scene.add(camera);
+  var createScene = function () {
+    var scene = new BABYLON.Scene(engine);
+    scene.clearColor = new BABYLON.Color4(0, 0, 0, 0); // Set the clear color to transparent
 
-  // Create a light and add it to the scene.
-  const light = new THREE.HemisphereLight(0xffffff, 0x444444);
-  light.position.set(0, 20, 0);
-  scene.add(light);
+    var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2 - 1, Math.PI / 2, 5, new BABYLON.Vector3(-3, 3, -3), scene);
+    camera.lowerRadiuslimit = 5;
+    camera.upperRadiusLimit = 5;
 
-  // Load the GLTF model using GLTFLoader
-  const loader = new THREE.GLTFLoader();
-  loader.load('path_to_your_model.glb', function(gltf) {
-    model = gltf.scene;
-    scene.add(model);
-  }, undefined, function(error) {
-    console.error(error);
-  });
+    camera.setPosition(new BABYLON.Vector3(0, 0, 0));
 
-  // Resize Update
-  window.addEventListener('resize', () => {
-    const WIDTH = window.innerWidth,
-      HEIGHT = window.innerHeight;
-    renderer.setSize(WIDTH, HEIGHT);
-    camera.aspect = WIDTH / HEIGHT;
-    camera.updateProjectionMatrix();
-  });
-}
+    camera.attachControl(canvas, true);
 
-function animate() {
-  requestAnimationFrame(animate);
+    var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
 
-  // Rotate the model over time
-  if(model) {
-    model.rotation.y += 0.005;
+    BABYLON.SceneLoader.ImportMesh("", "img/", "studija_latesc.glb", scene, function (meshes) {
+      camera.target = meshes[0].position; // this is x = 0, y = 0, make it look at the center of the object
+      scene.createDefaultCameraOrLight(true, true, true);
+    });
+
+    return scene;
   }
 
-  renderer.render(scene, camera);
+  var scene = createScene();
+
+  engine.runRenderLoop(function () {
+    scene.render();
+  });
+
+  window.addEventListener("resize", function () {
+    engine.resize();
+  });
 }
