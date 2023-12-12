@@ -373,14 +373,17 @@ html {
   left: 25%;
   transform: translate(-50%, -50%);
   width: 40%;
+  padding: 5%;
 }
 
-#photovideoslider .img-comp-container {
+#photovideoslider .slider {
   text-align: center;
   position: absolute;
   top: 50%;
-  left: 59%;
+  left: 75%;
   transform: translate(-50%, -50%);
+  width: 50%;
+  height: 100%;
 }
 
 
@@ -474,7 +477,9 @@ body::-webkit-scrollbar {
 /*slider*/
 .img-comp-container {
   position: relative;
-  height: 816px; /*should be the same height as the images*/
+  width: 614px;
+  height: 816px;
+  display: inline-block;
 }
 
 .img-comp-img {
@@ -482,6 +487,7 @@ body::-webkit-scrollbar {
   width: auto;
   height: auto;
   overflow: hidden;
+
 }
 
 .img-comp-img img {
