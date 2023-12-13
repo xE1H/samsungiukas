@@ -106,7 +106,7 @@ function initAnimations() {
 // animated drag image thing on scroll
   gsap.registerPlugin(ScrollTrigger);
   // If is on phone
-  var isOnPhone = window.matchMedia("(max-width: 768px)").matches;
+  var isOnPhone = window.matchMedia("(max-width: 600px)").matches;
   if (isOnPhone) {
     gsap.timeline({
       scrollTrigger: {
