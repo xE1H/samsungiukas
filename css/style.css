@@ -641,6 +641,14 @@ body::-webkit-scrollbar {
   padding: 5%;
 }
 
+p {
+  background: radial-gradient(
+    circle,
+    rgba(25, 26, 28, 0.5) 0%,
+    rgba(25, 26, 28, 0) 100%
+  );
+}
+
 @media only screen and (max-width: 600px) {
   #landing h1 {
     font-size: 3em;
@@ -733,23 +741,66 @@ body::-webkit-scrollbar {
   }
 
   .left-content {
-    width: 80%;
-    height: 40vh;
-    object-fit: cover;
-    position: absolute;
-    top: 7.5%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    width: 80% !important;
+    height: 40vh !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: 7.5% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
+  }
+
+  #progresas {
+    height: 200vh;
+  }
+
+  #progresas .left-content {
+    width: 100% !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    position: relative !important;
+    top: 7.5% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
   }
 
   .right-content {
-    width: 80%;
-    height: 40vh;
-    object-fit: cover;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    width: 80% !important;
+    height: 50vh !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: 45% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
+  }
+  #progresas > .right-content {
+    width: 90% !important;
+    height: 40vh !important;
+    object-fit: cover !important;
+    position: relative !important;
+    top: 0% !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
+  }
+
+  #islaidos {
+    height: 100vh;
+  }
+
+  #islaidos .left-content {
+    height: 60vh !important;
+  }
+
+  #islaidos .right-content {
+    top: 54% !important;
+    padding: 0 !important;
+
+  }
+
+  #progresas > .right-content > img {
+    position: relative !important;
+    left: 50% !important;
+    transform: translate(-50%, 0%) !important;
   }
 }
 
