@@ -141,6 +141,19 @@ function initAnimations() {
 
   gsap.timeline({
     scrollTrigger: {
+      trigger: '#progresas',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#progresas"
+    }
+  })
+    .to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
       trigger: '#tinklalaides',
       start: 'top',
       end: 'bottom',
@@ -164,6 +177,21 @@ function initAnimations() {
     .to({}, {'duration': 1}).set("body", {
     'overflow-y': 'hidden !important'
   });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#islaidos',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#islaidos"
+    }
+  })
+    .to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
+  });
+
+  progresas
 }
 
 function init3dModel() {

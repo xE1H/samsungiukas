@@ -26,9 +26,9 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
-    integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
+          integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
+        integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
 
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
@@ -39,6 +39,8 @@
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="/js/app.js"></script>
 </head>
@@ -57,6 +59,18 @@
     <source src="img/kitas.mp4" type="video/mp4">
   </video>
   <!--  Video  -->
+  <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)"
+         onchange="SetVolume(this.value)" style="position: absolute; bottom: 10px; right: 10px;"></input>
+
+  <script>
+    function SetVolume(val) {
+      var player = document.getElementById('video');
+      player.muted = false;
+      console.log('Before: ' + player.volume);
+      player.volume = val / 100;
+      console.log('After: ' + player.volume);
+    }
+  </script>
 </div>
 <div id="photovideoslider">
   <div class="slider">
@@ -72,11 +86,32 @@
     </div>
   </div>
   <div class="text">
-    <h2>FACILITATING PERSONAL GROWTH</h2>
+    <h2>THE SOUNDTRACK OF OUR SCHOOL</h2>
     <p>
-      We are dedicated to empowering students at Vilnius Lyceum, providing them with the freedom and resources to openly
-      express their creativity and individuality in the realms of both music and videography.
+      Music is inseparable from Vilnius lyceum. It is in our spirit to constantly create, play, and perform. Now imagine
+      the extraordinary - professional audio and video production equipment, right next to your classroom!
     </p>
+  </div>
+</div>
+<div id="progresas">
+  <div class="left-content">
+    <div id="videoDiv2">
+      <video autoplay muted loop id="video-half">
+        <source src="img/Untitled.mp4" type="video/mp4">
+      </video>
+      <!--  Video  -->
+    </div>
+  </div>
+  <div class="right-content">
+    <div class="text">
+      <h2>ALREADY IN PROGRESS</h2>
+      <p>
+        The dedicated 322nd room is already being renovated. We started by cleaning it up and gathering precise
+        measurements.
+      </p>
+    </div>
+    <img src="/img/progress.png" alt="Image" style="width: 90%; border-radius: 2%;">
+
   </div>
 </div>
 <div id="tinklalaides">
@@ -107,15 +142,83 @@
   </div>
   <div class="demo">
     <a href="https://s4t.xe1h.xyz">
-    <iframe src="https://s4t.xe1h.xyz/" width="500px" height="800px"></iframe>
+      <iframe src="https://s4t.xe1h.xyz/" width="500px" height="800px"></iframe>
     </a>
   </div>
 </div>
 <div id="islaidos">
-  <div class="left-content"></div>
-  <div class="right-content"></div>
+  <div class="left-content">
+    <div class="text">
+      <h2>EXPENSES</h2>
+      <p>
+        Examples of other studios as well as consultations with technicians helped us decide on the specific hardware
+        and software the best for our need. The calculated cost of the project is 7000 Eur.</p>
+    </div>
+  </div>
+  <div class="right-content">
+    <canvas id="myChart">
+      <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Furniture and acoustics', 'Camera', 'Sound equipment', 'Lighting', 'Others'],
+            datasets: [{
+              label: 'Eur',
+              data: [2707, 639, 897 + 1289 + 389, 324, 646],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+              ],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            responsive: true,
+            legend: {
+              display: true,
+              labels: {
+                fontSize: 16
+              }
+            },
+            plugins: {
+              doughnutlabel: {
+                labels: [{
+                  text: 'Total Expenses',
+                  font: {
+                    size: 20
+                  }
+                }]
+              }
+            },
+            layout: {
+              padding: {
+                left: 50,
+                right: 50,
+                top: 50,
+                bottom: 50
+              }
+            }
+          }
+        });
+      </script>
+    </canvas>
+  </div>
 </div>
-<div id="parama" style="display: flex; align-items: center; background-image: url('/img/paramaADDon.png');">
+</div>
+<div id="parama">
   <div class="left-content"
        style="">
     <iframe style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; height: 100%;"
@@ -130,8 +233,8 @@
     <img src="/img/qr.png" alt="Image" style="width: 50%; border-radius: 2%;">
   </div>
 </div>
-  <script>
-    initComparisons();
+<script>
+  initComparisons();
 
   //smoothScroll();
   initAnimations();
