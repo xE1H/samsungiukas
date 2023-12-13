@@ -13,8 +13,8 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
@@ -42,7 +42,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <script src="/js/app.js"></script>
+  <script src="js/app.js"></script>
 </head>
 
 <body>
@@ -76,10 +76,10 @@
   <div class="slider">
     <div class="img-comp-container">
       <div class="img-comp-img" id="after">
-        <img src="/img/after.png" width="614" height="816">
+        <img src="img/after.png" width="614" height="816">
       </div>
       <div class="img-comp-img img-comp-overlay" id="before">
-        <img src="/img/before.jpg" width="614" height="816">
+        <img src="img/before.jpg" width="614" height="816">
       </div>
       <img src="img/squiggle.png" class="squiggle"/>
       <img src="img/blob1.png" class="blob1"/>
@@ -110,7 +110,7 @@
         taken detailed measurements to ensure a perfect fit for its new purpose.
       </p>
     </div>
-    <img src="/img/progress.png" alt="Image" style="width: 90%; border-radius: 2%;">
+    <img src="img/progress.png" alt="Image" style="width: 90%; border-radius: 2%;">
 
   </div>
 </div>
@@ -230,16 +230,24 @@
     <div class="text">
       <h2>SUPPORT THIS PROJECT</h2>
     </div>
-    <img src="/img/qr.png" alt="Image" style="width: 50%; border-radius: 2%;">
+    <img src="img/qr.png" alt="Image" style="width: 50%; border-radius: 2%;">
   </div>
+</div>
+<div>
+
+<canvas id="renderCanvas" >
+
+
+</canvas>
 </div>
 <script>
   initComparisons();
 
   //smoothScroll();
   initAnimations();
-  //init3dModel();
+  init3dModel();
 </script>
+
 </body>
 
 </html>

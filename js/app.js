@@ -206,12 +206,12 @@ function initAnimations() {
   progresas
 }
 
-function init3dModel() {
+async function init3dModel() {
   var canvas = document.getElementById("renderCanvas");
 
   var engine = new BABYLON.Engine(canvas, true, {preserveDrawingBuffer: true, stencil: true});
 
-  var createScene = function () {
+  var createScene = async function () {
     var scene = new BABYLON.Scene(engine);
     scene.clearColor = new BABYLON.Color4(0, 0, 0, 0); // Set the clear color to transparent
 
@@ -225,15 +225,18 @@ function init3dModel() {
 
     var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
 
-    BABYLON.SceneLoader.ImportMesh("", "img/", "studija_latesc.glb", scene, function (meshes) {
-      camera.target = meshes[0].position; // this is x = 0, y = 0, make it look at the center of the object
-      scene.createDefaultCameraOrLight(true, true, true);
+    new Promise((resolve, reject) => {
+      BABYLON.SceneLoader.ImportMesh("", "img/", "studija_latesc.glb", scene, function (meshes) {
+        camera.target = meshes[0].position; // this is x = 0, y = 0, make it look at the center of the object
+        scene.createDefaultCameraOrLight(true, true, true);
+        resolve();
+      });
     });
 
     return scene;
   }
 
-  var scene = createScene();
+  var scene = await createScene();
 
   engine.runRenderLoop(function () {
     scene.render();
