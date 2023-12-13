@@ -121,6 +121,8 @@ function initAnimations() {
     });
 
     document.getElementById("websiteshare").style.display = "none";
+    document.getElementById("siteqr").style.display = "none";
+
     return;
   }
 
