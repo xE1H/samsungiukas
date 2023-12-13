@@ -119,6 +119,8 @@ function initAnimations() {
     }).to({}, {'duration': 1}).set("body", {
       'overflow-y': 'hidden !important'
     });
+
+    document.getElementById("websiteshare").style.display = "none";
     return;
   }
 
@@ -203,7 +205,18 @@ function initAnimations() {
     'overflow-y': 'hidden !important'
   });
 
-  progresas
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: '#parama',
+      start: 'top',
+      end: 'bottom',
+      scrub: 1,
+      pin: "#parama"
+    }
+  })
+    .to({}, {'duration': 1}).set("body", {
+    'overflow-y': 'hidden !important'
+  });
 }
 
 async function init3dModel() {

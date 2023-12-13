@@ -882,3 +882,19 @@ p {
   /* Fit background image */
   background-size: cover;
 }
+
+#websiteshare {
+  display: flex;
+  align-items: center;
+  /* background-image: url('/img/paramaADDon.png'); */
+  /* Fit background image */
+  background-size: cover;
+}
+
+#siteqr {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+}
