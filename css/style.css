@@ -589,7 +589,7 @@ body::-webkit-scrollbar {
 
 .img-comp-img {
   position: absolute;
-  width: auto;
+  width: 100%;
   height: auto;
   overflow: hidden;
 
@@ -677,9 +677,9 @@ p {
   }
 
   #photovideoslider .slider {
-    width: 80% !important;
+    width: 95% !important;
     height: 50% !important;
-    left: 50%;
+    left: 52.5%;
     top: 75%;
     transform: translate(-50%, -50%);
   }
