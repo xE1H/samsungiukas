@@ -102,13 +102,25 @@ function initComparisons() {
 
 function initAnimations() {
   var slider = document.getElementsByClassName("img-comp-slider")[0];
+
+// animated drag image thing on scroll
+  gsap.registerPlugin(ScrollTrigger);
   // If is on phone
   var isOnPhone = window.matchMedia("(max-width: 768px)").matches;
   if (isOnPhone) {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '#videoDiv',
+        start: 'top',
+        end: 'bottom',
+        scrub: 1,
+        pin: "#videoDiv"
+      }
+    }).to({}, {'duration': 1}).set("body", {
+      'overflow-y': 'hidden !important'
+    });
     return;
   }
-// animated drag image thing on scroll
-  gsap.registerPlugin(ScrollTrigger);
 
   gsap.timeline({
     scrollTrigger: {
@@ -197,7 +209,7 @@ function initAnimations() {
 function init3dModel() {
   var canvas = document.getElementById("renderCanvas");
 
-  var engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });
+  var engine = new BABYLON.Engine(canvas, true, {preserveDrawingBuffer: true, stencil: true});
 
   var createScene = function () {
     var scene = new BABYLON.Scene(engine);
